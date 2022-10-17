@@ -1,14 +1,15 @@
 import React from 'react';
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, onToggle, onRemove }) => {
     const {id, text, done} = todo;
     return (
             <li>
                 <span 
                 style={{
                     textDecoration: done ? 'line-through' : 'none'
-                }}>{text}</span>
-                <butoon>삭제</butoon>
+                }}
+                onClick={() => onToggle(id)}>{text}</span>
+                <butoon onClick={() => onRemove(id)}>삭제</butoon>
             </li>);
 };
 export default TodoItem;
