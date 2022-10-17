@@ -1,14 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { render } from '@testing-library/react';
-import TodoForm from './TodoForm';
-
-describe('<TodoForm/>', ()=> {
-    it('ha input and button', () => {
-        const { getByText, getByPlaceholderText } = render(<TodoForm />);
-        getByPlaceholderText('할 일을 입력하세요'); // input이 있는지 확인
-        getByText('등록');
-=======
 import { render, fireEvent } from '@testing-library/react';
 import TodoForm from './TodoForm';
 
@@ -57,6 +47,5 @@ describe('<TodoForm />', () => {
         fireEvent.click(button);
         expect(onInsert).toBeCalledWith('TDD 배우기'); // onInsert가 'TDD 배우기' 파라미터가 호출되었는지 확인
         expect(input).toHaveAttribute('value', ''); // input이 비워졌는지 확인
->>>>>>> todoform
     });
 });
